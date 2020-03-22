@@ -10,12 +10,14 @@ variables:
 stages:
   - Build php images
 
+before_script:
+  - docker info
+
 docker build:
   stage: Build php images
   only:
     - master
   variables:
-    VERSION_LIST: "5.5 5.6 7.0 7.1 7.2 7.3"
+    VERSION_LIST: "5.6 7.0 7.1 7.2 7.3"
   script:
-    - docker info
     - ./scripts/build.sh --push
