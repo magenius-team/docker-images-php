@@ -19,5 +19,4 @@ docker build:
   variables:
     VERSION_LIST: "5.6 7.0 7.1 7.2 7.3"
   script:
-    - ls -la .
-    - ./scripts/build.sh --push
+    - /bin/sh ./scripts/build.sh --push
