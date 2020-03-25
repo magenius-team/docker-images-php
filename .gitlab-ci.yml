@@ -3,9 +3,6 @@ image: docker:19.03.8
 services:
   - docker:19.03.8-dind
 
-variables:
-  DOCKER_TLS_CERTDIR: "/certs"
-
 stages:
   - Build php images
 
@@ -16,7 +13,7 @@ before_script:
 docker build:
   stage: Build php images
   only:
-    - master
+    - schedules
   variables:
     VERSION_LIST: "5.6 7.0 7.1 7.2 7.3"
   script:
