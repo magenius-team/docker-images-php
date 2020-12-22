@@ -39,7 +39,8 @@ VERSION_LIST="${VERSION_LIST:-"7.3"}"
 #VARIANT_LIST="${VARIANT_LIST:-"cli cli-loaders fpm fpm-loaders"}"
 VARIANT_LIST="${VARIANT_LIST:-"cli fpm"}"
 
-IMAGE_NAME="davidalger/php"
+#IMAGE_NAME="davidalger/php"
+export IMAGE_NAME="${IMAGE_NAME:-"davidalger/php"}"
 for BUILD_VERSION in ${VERSION_LIST}; do
   MAJOR_VERSION="$(echo "${BUILD_VERSION}" | sed -E 's/([0-9])([0-9])/\1.\2/')"
   for BUILD_VARIANT in ${VARIANT_LIST}; do
