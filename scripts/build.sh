@@ -46,7 +46,7 @@ for BUILD_VERSION in ${VERSION_LIST}; do
   for BUILD_VARIANT in ${VARIANT_LIST}; do
     # Configure build args specific to this image build
     export PHP_VERSION="${MAJOR_VERSION}"
-    BUILD_ARGS=(PHP_VERSION)
+    BUILD_ARGS=(IMAGE_NAME PHP_VERSION)
 
     # Build the image passing list of tags and build args
     printf "\e[01;31m==> building %s:%s (%s)\033[0m\n" \
