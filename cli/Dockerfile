@@ -12,7 +12,7 @@ RUN yum update -y \
 RUN set -eux \
     && PHP_VERSION=$(echo ${PHP_VERSION} | awk -F '.' '{print $1$2}') \
     && yum install -y epel-release \
-    && yum install -y https://repo.ius.io/ius-release-el7.rpm \
+    && yum install -y https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.8-1.x86_64.rpm \
     && yum install -y https://rpms.remirepo.net/enterprise/remi-release-7.rpm \
     && yum-config-manager --enable remi-php${PHP_VERSION} \
     && yum-config-manager --disable ius \
@@ -22,7 +22,7 @@ RUN set -eux \
         PHP_PACKAGES+="php-${PKG} "; \
     done \
     && yum install -y ${PHP_PACKAGES} perl which npm patch gettext unzip bzip2 pwgen nmap-ncat jq \
-    && yum install -y --enablerepo=ius git222 \
+    && yum install -y --enablerepo=endpoint git \
     && yum clean all \
     && rm -rf /var/cache/yum
 

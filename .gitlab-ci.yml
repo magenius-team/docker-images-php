@@ -1,7 +1,7 @@
-image: docker:19.03.8
+image: docker:latest
 
 services:
-  - docker:19.03.8-dind
+  - docker:dind
 
 stages:
   - Build php images
